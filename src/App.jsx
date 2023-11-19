@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "animate.css";
 import "./App.css";
 import Header from "./assets/components/Header";
 import MyApi from "./assets/components/MyApi";
 import Footer from "./assets/components/Footer";
-import "animate.css";
 
 function App() {
+  //CREATE USESTATES VARIABLES
   const [trendData, setTrendData] = useState([]);
   const [searchData, setSearchData] = useState([]);
   const [input, setInput] = useState("");
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <div className="container">
+        {/* CREATE APP STRUCTURE */}
         <Header setInput={setInput} setError={setError} />
         <MyApi
           trendData={trendData}

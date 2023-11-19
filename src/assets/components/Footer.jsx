@@ -1,4 +1,6 @@
 import { FaInstagram } from "react-icons/fa";
+
+//CREATE COMPONENT WITH NAME AND LINK TO DESIGNER IG PROFILE
 const Footer = () => {
   return (
     <>

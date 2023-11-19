@@ -1,5 +1,8 @@
+//IMPORT SEARCH COMPONENT
 import Search from "./Search";
 import { TbBurger } from "react-icons/tb";
+
+//CREATE COMPONENT WITH PROPS
 const Header = ({ setInput, setError }) => {
   return (
     <>
