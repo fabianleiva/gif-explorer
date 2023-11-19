@@ -2,7 +2,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MyApi from "./assets/components/MyApi";
-import Search from "./Search";
+import Search from "./assets/components/Search";
 
 function App() {
   const [trendData, setTrendData] = useState([]);
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <div >
+      <div>
         <img className="logoContainer" src="../public/ge-logo.png" alt="logo" />
       </div>
       <Search setInput={setInput} setError={setError} />
