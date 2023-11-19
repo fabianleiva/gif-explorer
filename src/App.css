@@ -1,7 +1,7 @@
 #root {
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  background-color: #fafafa;
 }
 
 .container {
@@ -23,16 +23,22 @@ img {
   border-radius: 10px;
 }
 
-
 .btn {
   margin-bottom: 1.5rem;
 }
 
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
 .form {
   display: flex;
-  width: 100%;
+  width: 35%;
 }
 
 .logoContainer {
   width: 30%;
 }
+
