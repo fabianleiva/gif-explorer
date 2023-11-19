@@ -65,7 +65,7 @@ const MyApi = ({
             <h3>
               No hay resultados para <span>{input}</span>!
             </h3>
-            <p>Vuelve a intentar</p>
+            <p>Vuelve a intentar.</p>
           </div>
         ) : null}
       </div>

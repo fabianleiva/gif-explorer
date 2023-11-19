@@ -12,7 +12,9 @@ function App() {
 
   return (
     <>
-      <h2>GIF's Explorer</h2>
+      <div >
+        <img className="logoContainer" src="../public/ge-logo.png" alt="logo" />
+      </div>
       <Search setInput={setInput} setError={setError} />
       <MyApi
         trendData={trendData}
