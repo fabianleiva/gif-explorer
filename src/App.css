@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600&display=swap");
+
+* {
+  font-family: Mulish, sans-serif;
+}
+
 #root {
   margin: 0;
   text-align: center;
@@ -10,13 +16,15 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  max-width: 100%;
+  padding: 0;
 }
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 100vw;
+  max-width: 100%;
   min-height: 100%;
   padding: 1rem;
 }
@@ -34,14 +42,16 @@
 }
 
 @keyframes shake {
-  0%, 100% {
-      transform: translateX(0);
+  0%,
+  100% {
+    transform: translateX(0);
   }
-  25%, 75% {
-      transform: translateX(-3px);
+  25%,
+  75% {
+    transform: translateX(-3px);
   }
   50% {
-      transform: translateX(3px);
+    transform: translateX(3px);
   }
 }
 
@@ -56,21 +66,22 @@ img {
 
 .searchBar {
   display: flex;
-  justify-content: center;
-  width: 100%;
 }
 
 .form {
   display: flex;
-  width: 30%;
-  min-width: 15rem;
-  max-width: 25rem;
+  min-width: 10rem;
 }
 
 .logo {
-  width: 30%;
-  max-width: 25rem;
-  min-width: 15rem;
+  cursor: pointer;
+  width: 6rem;
+}
+
+.eye {
+  cursor: pointer;
+  width: 1.6rem;
+  margin-left: 0.5rem;
 }
 
 .animate__animated.animate__fadeInUp {
@@ -85,4 +96,124 @@ img {
   flex-direction: column;
   justify-content: space-evenly;
   align-content: space-between;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ff0000;
+  border-radius: 0px 0px 100px 100px;
+  height: 6rem;
+}
+
+h2 {
+  margin: 0;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0052ff;
+  border-radius: 100px 100px 0px 0px;
+  height: 5rem;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: auto;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.navbarSection1 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.navbarSection2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarSection2:hover {
+  animation: shake 0.3s;
+  cursor: pointer;
+}
+
+.navbarSection3 {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 0rem !important;
+  border-radius: 100px;
+  margin-right: 0.5rem;
+  border: none;
+}
+
+.btn {
+  margin-bottom: 0rem !important;
+  border-radius: 100px;
+  background-color: #000000;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #0052ff;
+}
+
+.instagramIcon {
+  margin-left: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fafafa;
+}
+
+h5 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.gifDescription {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgb(150, 150, 150);
+}
+
+.burgerIcon {
+  cursor: pointer;
+}
+
+.burgerIcon:hover {
+  animation: shake 0.3s;
+}
+
+@media screen and (max-width: 767px) {
+  h2 {
+    display: none;
+  }
+
+  .eye {
+    width: 2.2rem;
+
+  }
 }
