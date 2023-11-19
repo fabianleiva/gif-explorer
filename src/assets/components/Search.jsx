@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoSearch } from "react-icons/io5";
 
 const Search = ({ setInput, setError }) => {
   const [inputValue, setInputValue] = useState("");
@@ -26,7 +27,7 @@ const Search = ({ setInput, setError }) => {
           value={inputValue}
         />
         <button type="submit" className="btn btn-primary">
-          Buscar
+        <IoSearch size="1.5rem" />
         </button>
       </form>
     </div>
