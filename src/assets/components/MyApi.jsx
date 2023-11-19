@@ -49,7 +49,7 @@ const MyApi = ({
 
   return (
     <>
-      <div className="container">
+      <div className="gallery">
         {(input && input !== "" ? searchData : trendData).map((e) => {
           return (
             <div key={e.id} className="gifContainer">
