@@ -8,17 +8,20 @@ function App() {
   const [trendData, setTrendData] = useState([]);
   const [searchData, setSearchData] = useState([]);
   const [input, setInput] = useState("");
+  const [error, setError] = useState(false);
 
   return (
     <>
-      <h1>GIF's Explorer</h1>
-      <Search setInput={setInput} />
+      <h2>GIF's Explorer</h2>
+      <Search setInput={setInput} setError={setError} />
       <MyApi
         trendData={trendData}
         setTrendData={setTrendData}
         searchData={searchData}
         setSearchData={setSearchData}
         input={input}
+        error={error}
+        setError={setError}
       />
     </>
   );
