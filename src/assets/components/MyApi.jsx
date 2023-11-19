@@ -49,26 +49,32 @@ const MyApi = ({
 
   return (
     <>
-      <div className="gallery">
-        {(input && input !== "" ? searchData : trendData).map((e) => {
-          return (
-            <div key={e.id} className="gifContainer">
-              <a target="_blank" href={e.embed_url}>
-                <img src={e.images.fixed_height.url} alt={e.title} />
-              </a>
-              <span>{e.title}</span>
-            </div>
-          );
-        })}
-        {error ? (
-          <div>
-            <h3>
-              No hay resultados para <span>{input}</span>!
-            </h3>
-            <p>Vuelve a intentar.</p>
+      <main className="content animate__animated animate__fadeInUp">
+        <div className="galleryContainer">
+          <div className="gallery">
+            {(input && input !== "" ? searchData : trendData).map((e) => {
+              return (
+                <div key={e.id} className="gifContainer">
+                  <a target="_blank" href={e.embed_url}>
+                    <img src={e.images.fixed_height.url} alt={e.title} />
+                  </a>
+                  <span className="gifDescription">
+                    {e.title !== "" ? e.title : <span>Untitled</span>}
+                  </span>
+                </div>
+              );
+            })}
+            {error ? (
+              <div>
+                <h3>
+                  No hay resultados para <span>{input}</span>!
+                </h3>
+                <p>Vuelve a intentar.</p>
+              </div>
+            ) : null}
           </div>
-        ) : null}
-      </div>
+        </div>
+      </main>
     </>
   );
 };
