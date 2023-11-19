@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Search = ({ setInput }) => {
+const Search = ({ setInput, setError }) => {
   const [inputValue, setInputValue] = useState("");
 
   const getInput = (e) => {
@@ -8,6 +8,7 @@ const Search = ({ setInput }) => {
   };
 
   const setInputState = (e) => {
+    setError(false);
     e.preventDefault();
     setInput(inputValue);
   };
