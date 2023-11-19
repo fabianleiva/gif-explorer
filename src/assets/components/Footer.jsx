@@ -1,10 +1,20 @@
+import { FaInstagram } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <footer>
-        <p>
-          DesignedBy: <span>@fab.leiva</span>
-        </p>
+      <footer className="content animate__animated animate__fadeInUp">
+        <div className="footerContent">
+          <h5>DesignedBy: Fabian Leiva</h5>
+          <div>
+            <a
+              className="instagramIcon"
+              target="_blank"
+              href="https://www.instagram.com/fab.leiva/"
+            >
+              <FaInstagram size="1.5em" />
+            </a>
+          </div>
+        </div>
       </footer>
     </>
   );
