@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Header from "./assets/components/Header";
 import MyApi from "./assets/components/MyApi";
-import Search from "./assets/components/Search";
 import Footer from "./assets/components/Footer";
 import "animate.css";
 
@@ -15,23 +15,16 @@ function App() {
   return (
     <>
       <div className="container">
-        <header className="animate__animated animate__fadeInDown">
-          <img className="logo" src="../public/ge-logo.png" alt="logo" />
-          <Search setInput={setInput} setError={setError} />
-        </header>
-        <main className="content animate__animated animate__fadeInUp">
-          <div className="galleryContainer">
-            <MyApi
-              trendData={trendData}
-              setTrendData={setTrendData}
-              searchData={searchData}
-              setSearchData={setSearchData}
-              input={input}
-              error={error}
-              setError={setError}
-            />
-          </div>
-        </main>
+        <Header setInput={setInput} setError={setError} />
+        <MyApi
+          trendData={trendData}
+          setTrendData={setTrendData}
+          searchData={searchData}
+          setSearchData={setSearchData}
+          input={input}
+          error={error}
+          setError={setError}
+        />
         <Footer />
       </div>
     </>
