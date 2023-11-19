@@ -6,7 +6,9 @@ const MyApi = ({
   setTrendData,
   searchData,
   setSearchData,
-  input
+  input,
+  error,
+  setError,
 }) => {
   const apiKey = "Z2ze1Cui0ND3IJ7i2KRM9EIABlFLIgZz";
   const apiUrlTrending = "https://api.giphy.com/v1/gifs/trending";
@@ -29,10 +31,12 @@ const MyApi = ({
             q: input,
           },
         });
-        setSearchData(response.data.data);
-        if (response.data.data.length <= 0) {
-          alert("No hay resultados!")
-        }
+        const sortResponse = response.data.data;
+        sortResponse.length <= 0 ? setError(true) : setError(false);
+        sortResponse.sort(function (a, b) {
+          return a.title.localeCompare(b.title);
+        });
+        setSearchData(sortResponse);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -56,6 +60,14 @@ const MyApi = ({
             </div>
           );
         })}
+        {error ? (
+          <div>
+            <h3>
+              No hay resultados para <span>{input}</span>!
+            </h3>
+            <p>Vuelve a intentar</p>
+          </div>
+        ) : null}
       </div>
     </>
   );
