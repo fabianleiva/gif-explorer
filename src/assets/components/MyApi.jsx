@@ -17,10 +17,15 @@ const MyApi = ({
   const apiUrlTrending = "https://api.giphy.com/v1/gifs/trending";
   const apiUrlSearch = "https://api.giphy.com/v1/gifs/search";
 
+    //USEEFFECT TO RENDER INITIAL RESULTS, AND RENDER FILTERED RESULT WHEN INPUT CHANGE
+    useEffect(() => {
+      getFetchData(input);
+    }, [input]);
+
   //FUNCTION TO GET DATA FROM API
   const getFetchData = async (input) => {
     try {
-      //VALIDATION FOR INPUT VALUE (EMPTY)
+      //1rs VALIDATION FOR INPUT VALUE (EMPTY)
       if (input === "") {
         const response = await axios(`${apiUrlTrending}`, {
           params: {
@@ -30,7 +35,7 @@ const MyApi = ({
         //SET STATE FOR TREND DATA (FOR INITIAL RESULTS RENDERING)
         setTrendData(response.data.data);
       }
-      //VALIDATION FOR INPUT VALUE (EXIST)
+      //2nd VALIDATION FOR INPUT VALUE (EXIST)
       if (input !== "") {
         const response = await axios(`${apiUrlSearch}`, {
           params: {
@@ -52,11 +57,6 @@ const MyApi = ({
       console.error("Error fetching data:", error);
     }
   };
-
-  //USEEFFECT TO RENDER INITIAL RESULTS, AND RENDER FILTERED RESULT WHEN INPUT CHANGE
-  useEffect(() => {
-    getFetchData(input);
-  }, [input]);
 
   return (
     <>
